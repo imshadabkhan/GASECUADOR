@@ -27,7 +27,7 @@ class ChatHeader extends StatelessWidget {
             )),
         Widgets.widthSpaceW2,
         CircleAvatar(
-          backgroundImage: AssetImage(Assets.profileImg1),
+          backgroundImage: AssetImage(Assets.profileImage),
         ),
         Widgets.widthSpaceW2,
         Column(

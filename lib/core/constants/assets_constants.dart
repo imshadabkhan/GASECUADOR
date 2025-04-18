@@ -7,6 +7,7 @@ class Assets
   static String onboardingImage = "$images/onboarding_image.png";
   static String cylinderImage = "$images/cylinder_image.png";
   static String round_CylinderImage = "$images/round_cylinder.png";
+  static String profileImage = "$images/profile.png";
 
 //////////////////////////////////////////I C O N S////////////////////////////////////////////////////////////////////////////////
 
@@ -28,5 +29,6 @@ class Assets
   static String starIcon = "$icons/star_icon.png";
   static String termsAndConditionIcon = "$icons/terms&condition_icon.png";
   static String truck_icon = "$icons/truck_icon.png";
+  static String whitePhoneIcon = "$icons/white_phone_icon.png";
 
 }

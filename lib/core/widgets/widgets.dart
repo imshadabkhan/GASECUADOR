@@ -10,8 +10,6 @@ import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
 
 import '../constants/assets_constants.dart';
 import '../constants/color_constants.dart';
-import '../utils/utils.dart';
-import 'image_preview.dart';
 
 class Widgets {
   static var heightSpaceH05 = SizedBox(
@@ -881,7 +879,7 @@ class Widgets {
                       height: 65,
                       decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage(Assets.profileImg1))),
+                              image: AssetImage(Assets.profileImage))),
                     ),
                   ),
                   const SizedBox(

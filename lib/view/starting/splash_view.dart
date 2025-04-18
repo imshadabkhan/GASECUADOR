@@ -1,10 +1,9 @@
-
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gasecuador/core/constants/assets_constants.dart';
-import 'package:gasecuador/core/constants/color_constants.dart';
+import 'package:gasecuador/core/routes/app_routes.dart';
 import 'package:gasecuador/view/starting/onboarding_screen.dart';
 
 
@@ -22,40 +21,21 @@ class _SplashViewState extends State<SplashView> {
   }
 
   @override
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorConstants.primaryColor,
-      body: Stack(
-        fit: StackFit.expand,
-        children: [
-          // Background image
-          Align(
-            alignment: Alignment.bottomRight,
-            child: Container(
-              height: 250.h,
-              decoration: BoxDecoration(
-                image: DecorationImage(
 
-                  image: AssetImage(Assets.splashScreenGuitar), // <- your background image
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          ),
-          // Splash content
-          AnimatedSplashScreen(
+        body: AnimatedSplashScreen(
             duration: 4000,
             centered: true,
-            splashIconSize: 400,
-            splash: Icon(Icons.add),
+            splashIconSize: 200,
+            splash: Image.asset(
+              Assets.appLogo,
+              width: .70.sw,
+            ),
             nextScreen: BoardingView(),
             splashTransition: SplashTransition.scaleTransition,
-            backgroundColor: Colors.transparent, // Make it transparent so BG shows
-          ),
-        ],
-      ),
-    );
-  }
 
+
+        ));
+  }
 }

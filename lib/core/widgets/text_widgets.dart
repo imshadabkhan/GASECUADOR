@@ -11,7 +11,7 @@ class Texts {
       textAlign: textAlign ?? TextAlign.center,
       style: TextStyle(
         fontSize: size ?? 28,
-        fontFamily: "PoppinsBold",
+        fontFamily: "Poppins",
         fontWeight: fontWeight ?? FontWeight.bold,
 
         color: color ?? Colors.black,
@@ -20,14 +20,15 @@ class Texts {
   }
 
   static textNormal(String label,
-      {double? size, Color? color, String? fontFamily, textAlign, overflow,var decoration}) {
+      {double? size, Color? color, String? fontFamily, textAlign, overflow,var decoration,var fontWeight}) {
     return AutoSizeText(
       label,
       style: TextStyle(
+
         decoration: decoration,
           fontSize: size ?? 18.0,
-          fontWeight: FontWeight.w400,
-          fontFamily: "PoppinsRegular",
+          fontWeight: fontWeight??FontWeight.w400,
+          fontFamily: "PlusJakartaSansRegular",
           color: color ?? ColorConstants.greyTextColor,
           overflow: overflow),
       textAlign: textAlign ?? TextAlign.center,
