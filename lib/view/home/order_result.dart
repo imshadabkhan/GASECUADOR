@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gasecuador/core/constants/assets_constants.dart';
 import 'package:gasecuador/core/constants/color_constants.dart';
 import 'package:gasecuador/core/constants/padding_constants.dart';
+import 'package:gasecuador/core/routes/app_routes.dart';
 import 'package:gasecuador/core/widgets/custom_button.dart';
 import 'package:gasecuador/core/widgets/text_widgets.dart';
 import 'package:gasecuador/core/widgets/widgets.dart';
@@ -37,7 +38,6 @@ backgroundColor: ColorConstants.whiteColor,
                     time: '30 - 45 min',
                     offer: '3.25 USD',
                     fare: '0.25 USD/km',
-                    imageUrl: 'https://randomuser.me/api/portraits/men/1.jpg',
                   ),
 
                 Widgets.heightSpaceH2,
@@ -49,7 +49,6 @@ backgroundColor: ColorConstants.whiteColor,
                     time: '30 - 45 min',
                     offer: '3.25 USD',
                     fare: '0.25 USD/km',
-                    imageUrl: 'https://randomuser.me/api/portraits/men/2.jpg',
                   ),
                   Widgets.heightSpaceH2,
                    Texts.textNormal(
@@ -87,19 +86,20 @@ backgroundColor: ColorConstants.whiteColor,
     required String time,
     required String offer,
     required String fare,
-    required String imageUrl,
+
   }) {
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(20),
+        border:Border.all(color: ColorConstants.grayBorderColor),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.05),
             blurRadius: 8,
-            offset: const Offset(0, 4),
-          )
+            offset: Offset(0, 4), // horizontal, vertical shadow
+          ),
         ],
       ),
       child: Column(
@@ -115,7 +115,7 @@ backgroundColor: ColorConstants.whiteColor,
                 ),
 
               ),
-             Widgets.widthSpaceW1,
+             Widgets.widthSpaceW2,
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -163,7 +163,7 @@ backgroundColor: ColorConstants.whiteColor,
                 children: [
                   _buildInfoTile(title: 'Distancia', value: distance),
 Widgets.heightSpaceH2,
-                  _buildInfoTile(title: 'Tarifa de plataforma', value: distance),
+                  _buildInfoTile(title: 'Tarifa de plataforma', value: offer),
                 ],
               ),
               Column(
@@ -171,7 +171,7 @@ Widgets.heightSpaceH2,
                 children: [
                   _buildInfoTile(title: 'Tiempo', value: time),
                   Widgets.heightSpaceH2,
-                  _buildInfoTile(title: 'total a pagar', value: distance),
+                  _buildInfoTile(title: 'total a pagar', value: fare),
                 ],
               ),
               _buildInfoTile(title: 'Oferta', value: offer),
@@ -183,7 +183,7 @@ Widgets.heightSpaceH2,
 
           CustomButton(
             onTap: () {
-              Get.to("");
+              Get.toNamed(AppRoutes.cancelOrder);
             },
             backgroundColor: ColorConstants.greenColor,
             label: 'Aceptar',

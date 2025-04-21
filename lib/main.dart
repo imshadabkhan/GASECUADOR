@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         );
       },
 
-      child:MainNavigation()
+      child:SplashView()
       // child: SplashView(),
     );
   }

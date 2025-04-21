@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gasecuador/core/constants/assets_constants.dart';
 import 'package:gasecuador/core/constants/color_constants.dart';
 import 'package:gasecuador/core/constants/padding_constants.dart';
+import 'package:gasecuador/core/routes/app_routes.dart';
 import 'package:gasecuador/core/widgets/custom_button.dart';
 import 'package:gasecuador/core/widgets/text_widgets.dart';
 import 'package:gasecuador/core/widgets/widgets.dart';
@@ -120,7 +121,7 @@ class HomeScreen extends StatelessWidget {
             ),
             CustomButton(
               onTap: () {
-                Get.to(() => PlaceOrderScreen());
+                Get.toNamed( AppRoutes.placeOrderScreen);
               },
               backgroundColor: ColorConstants.primaryColor,
               label: 'Crear pedido',

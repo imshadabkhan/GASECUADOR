@@ -24,7 +24,7 @@ class MyProfile extends StatelessWidget {
         children: [
           // Profile Section
           Padding(
-            padding: PaddingConstants.screenPadding.copyWith(top: 10),
+            padding: PaddingConstants.screenPadding.copyWith(top: 0),
             child: Row(
               children: [
                 CircleAvatar(

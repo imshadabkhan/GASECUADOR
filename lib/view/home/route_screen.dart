@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gasecuador/core/constants/assets_constants.dart';
 import 'package:gasecuador/core/constants/color_constants.dart';
 import 'package:gasecuador/core/constants/padding_constants.dart';
+import 'package:gasecuador/core/routes/app_routes.dart';
 import 'package:gasecuador/core/widgets/custom_button.dart';
 import 'package:gasecuador/core/widgets/entry_field.dart';
 import 'package:gasecuador/core/widgets/text_widgets.dart';
@@ -24,7 +25,7 @@ class RouteScreen extends StatelessWidget {
     return  Scaffold(
       backgroundColor: ColorConstants.whiteColor,
       appBar: AppBar(
-        title:  Texts.textBold('Crear pedido',size: 22),
+        title:  Texts.textBold('Ingrese a la ruta',size: 22),
         centerTitle: true,
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
@@ -72,7 +73,7 @@ class RouteScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 15.0,horizontal: 15.0),
             child: CustomButton(
               onTap: () {
-                Get.to(()=>OrderResultsPage());
+                Get.toNamed(AppRoutes.orderResult);
               },
               backgroundColor: ColorConstants.blackColor,
               label: 'Hecho',

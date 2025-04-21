@@ -3,10 +3,7 @@ import 'package:gasecuador/core/constants/assets_constants.dart';
 import 'package:gasecuador/core/constants/color_constants.dart';
 import 'package:gasecuador/view/home/compras_screen.dart';
 import 'package:gasecuador/view/home/home_view.dart';
-import 'package:gasecuador/view/home/order_result.dart';
-import 'package:gasecuador/view/home/place_order.dart';
 import 'package:gasecuador/view/home/profile_screen.dart';
-import 'package:gasecuador/view/home/route_screen.dart';
 
 
 class MainNavigation extends StatefulWidget {
@@ -51,6 +48,7 @@ class _MainNavigationState extends State<MainNavigation> {
 
               ),
               label: 'Hogar',
+
 
 
 

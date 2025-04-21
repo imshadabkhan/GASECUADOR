@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gasecuador/core/constants/assets_constants.dart';
 import 'package:gasecuador/core/constants/color_constants.dart';
+import 'package:gasecuador/core/routes/app_routes.dart';
 import 'package:gasecuador/core/widgets/custom_button.dart';
 import 'package:gasecuador/core/widgets/text_widgets.dart';
 import 'package:gasecuador/core/widgets/widgets.dart';
+import 'package:get/get.dart';
 
 
 
@@ -65,7 +67,7 @@ class _CancelOrderScreenState extends State<CancelOrderScreen> {
                       value: selected[index],
                       title: Transform.translate(
                         offset: Offset(-9, 0), // move text closer to the checkbox
-                        child: Texts.textNormal(reasons[index],textAlign: TextAlign.start,size: 14),
+                        child: Texts.textNormal(reasons[index],textAlign: TextAlign.start,size: 14,color: ColorConstants.blackColor),
                       ),
                       onChanged: (value) {
                         setState(() {
@@ -87,6 +89,7 @@ class _CancelOrderScreenState extends State<CancelOrderScreen> {
             ),
             Spacer(),
           CustomButton(
+            onTap: (){Get.toNamed(AppRoutes.orderTrackScreen);},
             label: "Cancelar Pedido",
             backgroundColor: ColorConstants.primaryColor,
 

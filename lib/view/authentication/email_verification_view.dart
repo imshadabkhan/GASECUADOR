@@ -129,7 +129,7 @@ class EmailVerificationView extends StatelessWidget {
                       ? ColorConstants.greyTextColor
                       : ColorConstants.primaryColor,
                   onTap: () {
-                    Get.to(()=>MainNavigation());
+                    Get.toNamed(AppRoutes.bottomBarView);
                     // otpController.text.length != 6? Widgets.showSnackBar(
                     //     "OTP Form", "Please enter 6 digits OTP"):
                     //
