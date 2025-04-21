@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 
 class ColorConstants {
   static var primaryColor = const Color(0xffF45130);
+  static var greenColor = const Color(0xff27C300);
 
   static var whiteColor = const Color(0xffFFFFFF);
   static var grayFillColor = const Color(0xffF8F8F8);
   static var greyTextColor = const Color(0xff4E4E4E);
-
+  static var purpleColor = const Color(0xff2E4C64);
+  static var searchFieldFillColor = const Color(0xffFAFAFA);
   static var grayBorderColor = const Color(0xffE5E9EB);
   static var blackColor = const Color(0xff000000);
   static var redColor = const Color(0xffFE2E52);

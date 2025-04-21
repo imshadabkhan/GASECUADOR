@@ -8,10 +8,14 @@ class Assets
   static String cylinderImage = "$images/cylinder_image.png";
   static String round_CylinderImage = "$images/round_cylinder.png";
   static String profileImage = "$images/profile.png";
+  static String roundCylinderImage = "$images/round_cylinder_bg_image.png";
+  static String profileImage1 = "$images/profile_image.png";
 
 //////////////////////////////////////////I C O N S////////////////////////////////////////////////////////////////////////////////
-
-
+  static String orangeTickIcon = "$icons/orange_tick_icon.png";
+  static String orangeRoundIndicatorIcon = "$icons/orange_round_indicator.png";
+  static String greyRoundIndicatorIcon = "$icons/grey_round_indicator.png";
+  static String reviewStar = "$icons/review_star.png";
   static String calendarIcon = "$icons/calendar_icon.png";
   static String clockIcon = "$icons/clock_icon.png";
   static String cylinderIcon ="$icons/cylinder_icon.png";
@@ -30,5 +34,6 @@ class Assets
   static String termsAndConditionIcon = "$icons/terms&condition_icon.png";
   static String truck_icon = "$icons/truck_icon.png";
   static String whitePhoneIcon = "$icons/white_phone_icon.png";
+  static String searchIcon = "$icons/searchicon.png";
 
 }

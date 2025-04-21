@@ -1,7 +1,9 @@
 import 'package:gasecuador/view/authentication/login.dart';
+import 'package:gasecuador/view/home/home_view.dart';
 import 'package:gasecuador/view/starting/onboarding_screen.dart';
 import 'package:get/get.dart';
 
+import '../../view/authentication/email_verification_view.dart';
 import '../../view/starting/splash_view.dart';
 
 class AppRoutes {
@@ -10,7 +12,8 @@ class AppRoutes {
   // static const userForgotPassword = '/user-forgot-password';
    static const userLogin = '/user-view';
   // static const signUp = "/signup";
-  // static const emailVerification = '/emailVerification';
+   static const emailVerification = '/emailVerification';
+  static const homeView = '/homeView';
   // static const navigationBar = "/navigation_bar_view";
   // static const editProfile = "/editProfile";
   // static const resetPassword = "/resetPassword";
@@ -27,8 +30,8 @@ class AppRoutes {
     GetPage(name: boarding, page: () => BoardingView()),
     // GetPage(name: userForgotPassword, page: () => ForgotPasswordView()),
      GetPage(name: userLogin, page: () => LoginView()),
-    // GetPage(name: signUp, page: () => SignUpView()),
-    // GetPage(name: emailVerification, page: () => EmailVerificationView()),
+     GetPage(name: homeView, page: () => HomeScreen()),
+     GetPage(name: emailVerification, page: () => EmailVerificationView()),
     // GetPage(name: navigationBar, page: () => HostNavScreen()),
     // GetPage(name: resetPassword, page: () => ResetPasswordView()),
     // GetPage(name: detailView, page: () => RequestDetailView()),

@@ -48,7 +48,7 @@ class MyOutlineButton extends StatelessWidget {
           style: ButtonStyle(
             padding:  MaterialStateProperty.all(EdgeInsets.symmetric(horizontal: 10.0, vertical: 0.0)),            backgroundColor:MaterialStateProperty.all<Color>(buttonBGColor ?? ColorConstants.transparentColor),
             overlayColor: WidgetStateProperty.all(
-              textColor?.withOpacity(0.05) ??ColorConstants.primaryColor,
+              textColor ??ColorConstants.primaryColor,
             ),
             shape: WidgetStateProperty.all(
               RoundedRectangleBorder(
@@ -73,7 +73,7 @@ class MyOutlineButton extends StatelessWidget {
                 SizedBox(width: iconSpacing),
                 Texts.textNormal(
                   text,
-                  textAlign: TextAlign.center,
+                  textAlign: TextAlign.center,color: textColor
 
 
                 ),

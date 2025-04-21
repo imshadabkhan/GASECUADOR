@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gasecuador/core/routes/app_routes.dart';
+import 'package:gasecuador/view/bottombar/bottom_bar.dart';
+import 'package:gasecuador/view/home/cancel_order.dart';
+import 'package:gasecuador/view/home/rating_screen.dart';
+import 'package:gasecuador/view/home/track_order.dart';
+
 import 'package:gasecuador/view/starting/splash_view.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
@@ -32,7 +37,9 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: SplashView(),
+
+      child:MainNavigation()
+      // child: SplashView(),
     );
   }
 }

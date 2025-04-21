@@ -29,6 +29,8 @@ class EntryField extends StatelessWidget {
   final BorderRadius? borderRadius;
   final Function()? onTrailingTap;
   final Function()? onTap;
+  final double? height;
+
   const EntryField({
     super.key,
     this.hint,
@@ -53,7 +55,8 @@ class EntryField extends StatelessWidget {
     this.onChange,
     this.textCapitalization,
     this.borderRadius,
-    this.fillColor
+    this.fillColor,
+    this.height
   });
 
   @override
@@ -91,7 +94,7 @@ class EntryField extends StatelessWidget {
         ),
         Container(
 alignment: Alignment.center,
-          height: 45,
+          height: height??45,
           child: TextFormField(onTap:onTap ,
             obscureText: obscureText ?? false,
             controller: controller,
@@ -360,9 +363,12 @@ class EntryBigField extends StatelessWidget {
   final Iterable<String>? autoFillType;
   final TextCapitalization? textCapitalization;
   final Function()? onTrailingTap;
+  final double? vertical;
 
   const EntryBigField({
+
     super.key,
+    this.vertical,
     this.hint,
     this.prefixIcon,
     this.color,
@@ -439,13 +445,13 @@ class EntryBigField extends StatelessWidget {
               : MaxLengthEnforcement.none,
           textAlign: textAlign ?? TextAlign.left,
           style: const TextStyle(
-              fontFamily: "InstrumentSansRegular",
+              fontFamily: "Poppins",
               fontWeight: FontWeight.w400,
               fontSize: 12,
               color: Colors.black),          keyboardType: textInputType,
           decoration: InputDecoration(
             contentPadding:
-                const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                EdgeInsets.symmetric(horizontal: 10, vertical: vertical ?? 25),
             prefixIcon: prefixIcon != null
                 ? Icon(
                     prefixIcon,
@@ -462,26 +468,27 @@ class EntryBigField extends StatelessWidget {
                 )),
             hintText: hint,
             hintStyle: const TextStyle(
-                fontFamily: "InstrumentSansRegular",
+                fontFamily: "Poppins",
                 fontWeight: FontWeight.w400,
                 fontSize: 12,
                 color: Colors.black45),
             filled: true,
-            fillColor: ColorConstants.greyTextColor,
+            fillColor: ColorConstants.searchFieldFillColor,
             counterStyle: const TextStyle(
               height: double.minPositive,
             ),
             counterText: "",
             border:  OutlineInputBorder(
-              borderSide: BorderSide(color: ColorConstants.greyTextColor),
+              borderSide: BorderSide(color: ColorConstants.grayBorderColor),
               borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
             focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: ColorConstants.primaryColor),
+              borderSide: BorderSide(color: ColorConstants.grayBorderColor),
               borderRadius: const BorderRadius.all(Radius.circular(10)),
+
             ),
             enabledBorder:  OutlineInputBorder(
-              borderSide: BorderSide(color: ColorConstants.greyTextColor),
+              borderSide: BorderSide(color: ColorConstants.grayBorderColor),
               borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
           ),
