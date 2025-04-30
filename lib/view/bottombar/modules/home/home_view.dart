@@ -7,17 +7,16 @@ import 'package:gasecuador/core/routes/app_routes.dart';
 import 'package:gasecuador/core/widgets/custom_button.dart';
 import 'package:gasecuador/core/widgets/text_widgets.dart';
 import 'package:gasecuador/core/widgets/widgets.dart';
-import 'package:gasecuador/view/home/place_order.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: SizedBox(
             height: 55.h,
             child: Image.asset(
@@ -135,7 +134,7 @@ class HomeScreen extends StatelessWidget {
   Widget _infoCard(
       String icon, String title, String count, Color color, Color chipColor) {
     return Container(
-      height: 150.h,
+      height: 120.h,
 
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey.shade200),

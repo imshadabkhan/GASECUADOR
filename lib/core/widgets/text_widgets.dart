@@ -5,14 +5,18 @@ import 'package:gasecuador/core/constants/color_constants.dart';
 
 class Texts {
   static textBold(String label,
-      {double? size, Color? color, FontWeight? fontWeight, textAlign}) {
+      {double? size, Color? color, FontWeight? fontWeight, textAlign,int? maxlines,TextOverflow? overFlow}) {
     return AutoSizeText(
       label,
       textAlign: textAlign ?? TextAlign.center,
+      maxLines: maxlines??1,
+      overflow: overFlow,
       style: TextStyle(
+
         fontSize: size ?? 28,
         fontFamily: "Poppins",
         fontWeight: fontWeight ?? FontWeight.bold,
+
 
         color: color ?? Colors.black,
       ),

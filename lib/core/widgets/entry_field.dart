@@ -85,7 +85,7 @@ class EntryField extends StatelessWidget {
                             .titleSmall!
                             .copyWith(fontSize: 14, color: Colors.red),
                       ),
-                    )
+                    ),
                 ],
               )
             : const SizedBox.shrink(),
@@ -104,7 +104,6 @@ alignment: Alignment.center,
             textCapitalization: textCapitalization ?? TextCapitalization.none,
             readOnly: readOnly ?? false,
             maxLines: maxLines ?? 1,
-
             inputFormatters: inputFormatter,
             maxLength: maxLength,
             maxLengthEnforcement: maxLengthEnforced ?? false
@@ -114,7 +113,6 @@ alignment: Alignment.center,
             style: const TextStyle(
                 fontFamily: "PoppinsRegular",
                 fontWeight: FontWeight.w400,
-
                 fontSize: 12,
                 color: Colors.black),
             keyboardType: textInputType,
@@ -148,7 +146,7 @@ filled: true,
                 height: double.minPositive,
               ),
               counterText: "",
-              fillColor:fillColor??ColorConstants.grayFillColor ,
+              fillColor:fillColor??ColorConstants.entryFieldFillColor ,
               border: OutlineInputBorder(
                 borderSide:  BorderSide(color: ColorConstants.greyTextColor),
                 borderRadius:
@@ -276,7 +274,7 @@ class EntrySearchField extends StatelessWidget {
                 : MaxLengthEnforcement.none,
             textAlign: textAlign ?? TextAlign.left,
             style: const TextStyle(
-                fontFamily: "InstrumentSansRegular",
+                fontFamily: "PlusJakartaSansRegular",
                 fontWeight: FontWeight.w400,
                 fontSize: 12,
                 color: Colors.black),
@@ -445,8 +443,8 @@ class EntryBigField extends StatelessWidget {
               : MaxLengthEnforcement.none,
           textAlign: textAlign ?? TextAlign.left,
           style: const TextStyle(
-              fontFamily: "Poppins",
-              fontWeight: FontWeight.w400,
+              fontFamily: "PlusJakartaSansRegular",
+              fontWeight: FontWeight.normal,
               fontSize: 12,
               color: Colors.black),          keyboardType: textInputType,
           decoration: InputDecoration(
@@ -468,8 +466,8 @@ class EntryBigField extends StatelessWidget {
                 )),
             hintText: hint,
             hintStyle: const TextStyle(
-                fontFamily: "Poppins",
-                fontWeight: FontWeight.w400,
+                fontFamily: "PlusJakartaSansRegular",
+                fontWeight: FontWeight.normal,
                 fontSize: 12,
                 color: Colors.black45),
             filled: true,

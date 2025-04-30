@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gasecuador/core/widgets/text_widgets.dart';
+import 'package:gasecuador/view/home/inbox/view/chat_view.dart';
 
 import 'package:get/get.dart';
 import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
@@ -169,10 +170,10 @@ class Widgets {
   }) {
     return GestureDetector(
       onTap: () {
-        // Get.to(() => ChatView());
+        Get.to(() => ChatView());
       },
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 5),
+        padding: EdgeInsets.symmetric(vertical: 10),
         child: Row(
           children: [
             Stack(

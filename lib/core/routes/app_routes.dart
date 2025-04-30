@@ -1,18 +1,16 @@
 import 'package:gasecuador/view/authentication/login.dart';
 import 'package:gasecuador/view/bottombar/bottom_bar.dart';
-import 'package:gasecuador/view/home/cancel_order.dart';
-import 'package:gasecuador/view/home/home_view.dart';
-import 'package:gasecuador/view/home/order_result.dart';
-import 'package:gasecuador/view/home/place_order.dart';
-import 'package:gasecuador/view/home/rating_screen.dart';
-import 'package:gasecuador/view/home/route_screen.dart';
-import 'package:gasecuador/view/home/track_order.dart';
+import 'package:gasecuador/view/bottombar/modules/home/cancel_order/cancel_order.dart';
+import 'package:gasecuador/view/bottombar/modules/home/home_view.dart';
+import 'package:gasecuador/view/bottombar/modules/home/order_result.dart';
+import 'package:gasecuador/view/bottombar/modules/home/place_order.dart';
+import 'package:gasecuador/view/bottombar/modules/home/route_screen.dart';
+import 'package:gasecuador/view/bottombar/modules/profile/rating_screen.dart';
+import 'package:gasecuador/view/bottombar/modules/track_order/track_order.dart';
 import 'package:gasecuador/view/starting/onboarding_screen.dart';
 import 'package:get/get.dart';
-
 import '../../view/authentication/email_verification_view.dart';
 import '../../view/starting/splash_view.dart';
-
 class AppRoutes {
   static const splash = '/';
   static const boarding = '/boarding';

@@ -5,6 +5,7 @@ import 'package:gasecuador/core/constants/color_constants.dart';
 import 'package:gasecuador/core/constants/padding_constants.dart';
 import 'package:gasecuador/core/routes/app_routes.dart';
 import 'package:gasecuador/core/widgets/custom_button.dart';
+import 'package:gasecuador/core/widgets/custom_dropdown.dart';
 import 'package:gasecuador/core/widgets/entry_field.dart';
 import 'package:gasecuador/core/widgets/text_widgets.dart';
 import 'package:gasecuador/core/widgets/widgets.dart';
@@ -16,6 +17,9 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap:(){
+FocusScope.of(context).unfocus();
+      },
       child: Scaffold(
         appBar: AppBar(
           title: SizedBox(
@@ -37,13 +41,14 @@ class LoginView extends StatelessWidget {
               Widgets.heightSpaceH3,
               Row(
                 children: [
-                  Expanded(
-                      flex: 1,
-                      child: EntryField(
-                        label: "País",
-                        suffixIcon: Icons.keyboard_arrow_down_sharp,
-                        hint: "EC+593",
-                      )),
+                  // Expanded(
+                  //     flex: 1,
+                  //     child: EntryField(
+                  //       label: "País",
+                  //       suffixIcon: Icons.keyboard_arrow_down_sharp,
+                  //       hint: "EC+593",
+                  //     )),
+                  Expanded(child: CustomDropdown(onTap: (){}, value: 'EC+593', hint: "EC+593", label:"País",)),
                   Widgets.widthSpaceW1,
                   Expanded(
                       flex: 2,
@@ -56,7 +61,7 @@ class LoginView extends StatelessWidget {
               Spacer(),
               CustomButton(
                 onTap: (){
-Get.toNamed(AppRoutes.emailVerification);
+                    Get.toNamed(AppRoutes.emailVerification);
                 },
                 label: "Continuar",
                 backgroundColor: ColorConstants.primaryColor,

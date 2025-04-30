@@ -22,7 +22,7 @@ class OrderTicketWidget extends StatelessWidget {
           ],
           color: ColorConstants.whiteColor,
           borderRadius: BorderRadius.circular(15),
-          border: Border.all(color: ColorConstants.grayBorderColor)),
+          ),
       child: Padding(
         padding: PaddingConstants.screenPaddingHalf,
         child: Column(

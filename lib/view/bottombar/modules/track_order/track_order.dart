@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gasecuador/core/constants/assets_constants.dart';
@@ -7,15 +6,14 @@ import 'package:gasecuador/core/constants/color_constants.dart';
 import 'package:gasecuador/core/constants/padding_constants.dart';
 import 'package:gasecuador/core/routes/app_routes.dart';
 import 'package:gasecuador/core/widgets/custom_button.dart';
-import 'package:gasecuador/core/widgets/outline_button.dart';
 import 'package:gasecuador/core/widgets/text_widgets.dart';
 import 'package:gasecuador/core/widgets/widgets.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-
 class OrderTrackingPage extends StatelessWidget {
-   OrderTrackingPage({super.key});
-   bool delieveryCompleted=false;
+    OrderTrackingPage({super.key});
+  final bool delieveryCompleted=true
+   ;
   final Completer<GoogleMapController> _controller =
   Completer<GoogleMapController>();
   static const CameraPosition _kGooglePlex = CameraPosition(
@@ -41,21 +39,21 @@ class OrderTrackingPage extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(padding:EdgeInsets.symmetric(horizontal: 20,),child:Texts.textNormal('Seguimiento del repartidor en el mapa',size: 14), ),
+              Padding(padding:EdgeInsets.symmetric(horizontal: 20,),child:Center(child: Texts.textNormal('Seguimiento del repartidor en el mapa',size: 14),) ),
 
               Widgets.heightSpaceH2,
              delieveryCompleted==false? SizedBox(
-                height: 200.h,
-                width: double.infinity,
-                child: GoogleMap(
-                  mapType: MapType.normal,
-                  initialCameraPosition: _kGooglePlex,
-                  onMapCreated: (GoogleMapController controller) {
-                    _controller.complete(controller);
-                  },
-                ),
-              ):Padding(
-                padding: PaddingConstants.screenPaddingHalf,
+               height: 200.h,
+               width: double.infinity,
+               child: GoogleMap(
+                 mapType: MapType.terrain,
+                 initialCameraPosition: _kGooglePlex,
+                 onMapCreated: (GoogleMapController controller) {
+                   _controller.complete(controller);
+                 },
+               ),
+             ):Padding(
+                padding: PaddingConstants.screenPaddingHalf.copyWith(bottom: 0),
                 child: Container(
                   width: double.infinity,
                   height:200.h,decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),border: Border.all(color: ColorConstants.grayBorderColor,width: 2)),child: Padding(
@@ -109,8 +107,9 @@ class OrderTrackingPage extends StatelessWidget {
                   Get.toNamed(AppRoutes.ratingScreen);
                 },)),
                 Widgets.widthSpaceW2,
-                Expanded(child: MyOutlineButton(height:30.h,text: 'Cancelar pedido',borderColor: ColorConstants.primaryColor,textColor: ColorConstants.primaryColor ,)),
-              ],
+                Expanded(child: CustomButton(label: 'Cancelar pedido',backgroundColor: ColorConstants.transparentColor,borderColor:ColorConstants.redColor,textColor:ColorConstants.redColor,fontSize: 12,onTap: (){
+                  Get.toNamed(AppRoutes.ratingScreen);
+                },)),              ],
             ),
           )
           ,Widgets.heightSpaceH2,
@@ -144,27 +143,27 @@ class MyIndicator extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 8.0),
+          padding: const EdgeInsets.only(top: 4.0),
           child: Column(
             children: [
-              SizedBox(height: 15, child: Image.asset(icon)),
+              SizedBox(height: 15.h, child: Image.asset(icon)),
               Widgets.heightSpaceH05,
               // Optional: make height dynamic based on text content
               Container(
-                width: 2,
-               height: 55.h,
+                width: 2.w,
+               height: 52.h,
                // Adjust this manually or calculate dynamically
                 color: ColorConstants.grayBorderColor,
               ),
             ],
           ),
         ),
-        SizedBox(width: 12.w), // spacing between icon and text
+        SizedBox(width: 10.w), // spacing between icon and text
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Texts.textBold(title, size: 18, textAlign: TextAlign.start),
+              Texts.textBold(title, size: 16, textAlign: TextAlign.start),
               Widgets.heightSpaceH05,
               if (subTitleHeading.isNotEmpty || subTitle.isNotEmpty)
                 RichText(
@@ -179,6 +178,7 @@ class MyIndicator extends StatelessWidget {
                     ],
                   ),
                 ),
+              Widgets.heightSpaceH05,
               if (subTitleHeading2.isNotEmpty || subTitle2.isNotEmpty)
                 RichText(
                   text: TextSpan(
@@ -199,4 +199,3 @@ class MyIndicator extends StatelessWidget {
     );
   }
 }
-

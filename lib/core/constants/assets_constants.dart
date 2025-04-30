@@ -35,5 +35,6 @@ class Assets
   static String truck_icon = "$icons/truck_icon.png";
   static String whitePhoneIcon = "$icons/white_phone_icon.png";
   static String searchIcon = "$icons/searchicon.png";
+  static String sendIcon = "$icons/send.png";
 
 }

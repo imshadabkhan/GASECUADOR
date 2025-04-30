@@ -3,7 +3,6 @@ import 'package:gasecuador/core/constants/color_constants.dart';
 import 'package:gasecuador/core/constants/padding_constants.dart';
 import 'package:gasecuador/core/widgets/order_ticket_widget.dart';
 import 'package:gasecuador/core/widgets/text_widgets.dart';
-import 'package:gasecuador/core/widgets/widgets.dart';
 
 class MyPurchases extends StatelessWidget {
   const MyPurchases({super.key});

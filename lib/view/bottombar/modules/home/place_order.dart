@@ -8,7 +8,7 @@ import 'package:gasecuador/core/widgets/custom_button.dart';
 import 'package:gasecuador/core/widgets/entry_field.dart';
 import 'package:gasecuador/core/widgets/text_widgets.dart';
 import 'package:gasecuador/core/widgets/widgets.dart';
-import 'package:gasecuador/view/home/route_screen.dart';
+
 import 'package:get/get.dart';
 
 class PlaceOrderScreen extends StatefulWidget {
@@ -51,7 +51,7 @@ class _PlaceOrderScreenState extends State<PlaceOrderScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         _optionButton('Sólo recarga'),
-                        Widgets.widthSpaceW1,
+                        Widgets.widthSpaceW1,Widgets.widthSpaceW05,
                         _optionButton('Tanque + Recarga'),
                       ],
                     ),
@@ -92,8 +92,8 @@ class _PlaceOrderScreenState extends State<PlaceOrderScreen> {
                           BorderRadius.only(topLeft: Radius.circular(6),bottomLeft:Radius.circular(6) ),
                         ),
                         Container(
-                          width: 40,
-                          height: 40,
+                          width: 40.h,
+                          height: 40.w,
                             decoration: BoxDecoration(
                                 border: Border.all(color: ColorConstants.blackColor)
                             ),
@@ -191,7 +191,7 @@ class _PlaceOrderScreenState extends State<PlaceOrderScreen> {
           height: 40,
           decoration: BoxDecoration(
             color: isSelected ? ColorConstants.purpleColor : Colors.white,
-            border: Border.all(color: Colors.grey),
+            border: Border.all(color: isSelected ? ColorConstants.purpleColor : ColorConstants.grayBorderColor),
             borderRadius: BorderRadius.circular(8),
           ),
           child: Center(
@@ -224,17 +224,17 @@ class _PlaceOrderScreenState extends State<PlaceOrderScreen> {
     );
   }
 
-  Widget _textFieldWithIcon(IconData icon, String hint,
-      {bool readOnly = false}) {
-    return TextFormField(
-      readOnly: readOnly,
-      decoration: InputDecoration(
-        prefixIcon: Icon(icon, size: 18,color: ColorConstants.blackColor,),
-        hintText: hint,
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-        contentPadding:
-            const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-      ),
-    );
-  }
+  // Widget _textFieldWithIcon(IconData icon, String hint,
+  //     {bool readOnly = false}) {
+  //   return TextFormField(
+  //     readOnly: readOnly,
+  //     decoration: InputDecoration(
+  //       prefixIcon: Icon(icon, size: 18,color: ColorConstants.blackColor,),
+  //       hintText: hint,
+  //       border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+  //       contentPadding:
+  //           const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+  //     ),
+  //   );
+  // }
 }

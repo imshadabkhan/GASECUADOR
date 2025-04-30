@@ -39,19 +39,19 @@ class RatingScreen extends StatelessWidget {
 
           ),
           onRatingUpdate: (rating) {
-            print(rating);
           },
         ),
-            Widgets.heightSpaceH1,
+            Widgets.heightSpaceH2,
             EntryBigField(
 
 
               label: 'Escribe una reseña',
-
+hint: "Escriba aquí instrucciones adicionales para completar su pedido",
 
             ),
             Widgets.heightSpaceH1,
             CustomButton(label:"Enviar reseña",backgroundColor: ColorConstants.primaryColor,
+
               )
 
         ],),

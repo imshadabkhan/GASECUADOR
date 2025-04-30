@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gasecuador/core/constants/assets_constants.dart';
@@ -6,14 +7,14 @@ import 'package:gasecuador/core/constants/padding_constants.dart';
 import 'package:gasecuador/core/routes/app_routes.dart';
 import 'package:gasecuador/core/widgets/custom_button.dart';
 import 'package:gasecuador/core/widgets/widgets.dart';
-import 'package:gasecuador/view/bottombar/bottom_bar.dart';
 import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-
 import '../../core/widgets/text_widgets.dart';
 
 class EmailVerificationView extends StatelessWidget {
-  TextEditingController otpController = TextEditingController();
+  final TextEditingController otpController = TextEditingController();
+
+  EmailVerificationView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -68,23 +69,24 @@ class EmailVerificationView extends StatelessWidget {
                       borderWidth: .5,
                       selectedBorderWidth: .8,
                       activeBorderWidth: .5,
-                      activeFillColor: ColorConstants.grayBorderColor,
-                      inactiveFillColor: ColorConstants.grayBorderColor,
+                      activeFillColor: ColorConstants.entryFieldFillColor,
+                      inactiveFillColor: ColorConstants.entryFieldFillColor,
                       inactiveBorderWidth: .5,
-                      selectedColor: ColorConstants.blackColor,
-                      activeColor: Colors.black12.withOpacity(.09),
+                      selectedColor: ColorConstants.grayBorderColor,
+                      activeColor: Colors.black12.withAlpha((.09*255).toInt()),
                       selectedFillColor: ColorConstants.whiteColor,
-                      inactiveColor: Colors.black12.withOpacity(.09)),
+                      inactiveColor: Colors.black12.withAlpha((.09*255).toInt())),
                   cursorColor: ColorConstants.blackColor,
                   animationDuration: Duration(milliseconds: 300),
                   enableActiveFill: true,
                   keyboardType: TextInputType.number,
                   onCompleted: (v) {
-                    print("Completed");
                   },
                   onChanged: (value) {},
                   beforeTextPaste: (text) {
-                    print("Allowing to paste $text");
+                    if (kDebugMode) {
+                      print("Allowing to paste $text");
+                    }
                     //if you return true then it will show the paste confirmation dialog. Otherwise if false, then nothing will happen.
                     //but you can show anything you want here, like your pop up saying wrong paste format or etc
                     return true;
@@ -126,7 +128,7 @@ class EmailVerificationView extends StatelessWidget {
                       : ColorConstants.whiteColor,
                   textColor: ColorConstants.blackColor,
                   backgroundColor: otpController.text.length != 6
-                      ? ColorConstants.greyTextColor
+                      ? ColorConstants.disableButtonColor
                       : ColorConstants.primaryColor,
                   onTap: () {
                     Get.toNamed(AppRoutes.bottomBarView);
