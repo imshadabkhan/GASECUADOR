@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gasecuador/core/widgets/text_widgets.dart';
-import 'package:gasecuador/view/home/inbox/view/chat_view.dart';
+import 'package:gasecuador/view/bottombar/modules/inbox/view/chat_view.dart';
+
 
 import 'package:get/get.dart';
 import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';

@@ -5,12 +5,14 @@ import 'package:gasecuador/core/constants/color_constants.dart';
 import 'package:gasecuador/core/constants/padding_constants.dart';
 import 'package:gasecuador/core/routes/app_routes.dart';
 import 'package:gasecuador/core/widgets/custom_button.dart';
+import 'package:gasecuador/core/widgets/info_card.dart';
 import 'package:gasecuador/core/widgets/text_widgets.dart';
 import 'package:gasecuador/core/widgets/widgets.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+   HomeScreen({super.key});
+   final InfoCard infoCardHelper = InfoCard();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,18 +100,18 @@ class HomeScreen extends StatelessWidget {
                   Row(
                     children: [
                       Expanded(
-                        child: _infoCard(Assets.cylinderIcon, 'Mis pedidos', '10',
+                        child: infoCardHelper.infoCard(Assets.cylinderIcon, 'Mis pedidos', '10',
                             Colors.blue, Color(0xff4491D9).withAlpha((0.1*255).toInt())),
                       ),
                       Widgets.widthSpaceW4,
                       Expanded(
-                        child: _infoCard(Assets.redCardIcon, 'Mis Cancelaciones', '2',
+                        child: infoCardHelper.infoCard(Assets.redCardIcon, 'Mis Cancelaciones', '2',
                             Colors.red, Color(0xffD94444).withAlpha((0.1*255).toInt())),
                       ),
                     ],
                   ),
                   Widgets.heightSpaceH3,
-                  _infoCard(Assets.starIcon, 'Mis puntos acumulados', '10',
+                  infoCardHelper.infoCard(Assets.starIcon, 'Mis puntos acumulados', '10',
                       Colors.amber, Color(0xffDEBF12).withAlpha((0.1*255).toInt())),
 
                   Widgets.heightSpaceH3,
@@ -131,46 +133,5 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _infoCard(
-      String icon, String title, String count, Color color, Color chipColor) {
-    return Container(
-      height: 120.h,
 
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey.shade200),
-        borderRadius: BorderRadius.circular(12),
-        color: Colors.white,
-      ),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 12.0,top: 4.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              height: 35.h,
-              width: 35.w,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(6),
-                color: chipColor,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Image.asset(
-                  icon,
-                  height: 20,
-                ),
-              ),
-            ),
-            Widgets.heightSpaceH2,
-            Texts.textNormal(title, textAlign: TextAlign.start, size: 14),
-            Widgets.heightSpaceH05,
-            Texts.textBold(
-              count,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 }
